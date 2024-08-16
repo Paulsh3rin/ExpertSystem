@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disease Diagnostic Expert System</title>
+    <link rel="stylesheet" href="/static/styles.css">
+
+    <!-- Import Mermaid.js from CDN -->
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@9/dist/mermaid.esm.min.mjs';
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+</head>
+<body>
+    <div class="title-container">
+        <h1>Disease Diagnostic Expert System</h1>
+    </div>
+    <div class="main-container">
+        <!-- Left Column -->
+        <div class="left-column">
+            <div class="symptom-message">
+                <p>Select your symptoms:</p>
+            </div>
+            <form method="post">
+                <!-- Dynamically generate checkboxes from symptoms configuration -->
+                {% for key, label in symptoms.items() %}
+                <label><input type="checkbox" name="{{ key }}"> {{ label }}</label><br>
+                {% endfor %}
+                <button type="submit">Diagnose</button>
+            </form>
+
+            {% if diagnosis %}
+            <h2>{{ diagnosis }} !!</h2>
+            <div class="medications-container">
+                <h3>Suggested Medications:</h3>
+                <ul>
+                    {% for medication in medications %}
+                    <li>{{ medication }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endif %}
+        </div>
+
+        <!-- Right Column -->
+        <div class="right-column">
+            <div class="diagram-container">
+                <h3>System Workflow Diagram</h3>
+                <div class="mermaid">
+                graph TD
+                    A[User Submits Form] --> B[Flask Server Receives Request]
+                    B --> C[Expert System Processes Symptoms]
+                    C --> D{Inference Engine}
+                    D --> |Yes| E[Return Diagnosis and Medications]
+                    D --> |No| F[Return 'No Diagnosis Found']
+                    E --> G[Display Result to User]
+                    F --> G[Display Result to User]
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

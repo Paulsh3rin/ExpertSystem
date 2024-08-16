@@ -1,0 +1,123 @@
+/* Base styling for body and html */
+body, html {
+    height: 100%; /* Full height */
+    margin: 0; /* Remove default margin */
+    font-family: Arial, sans-serif; /* Set a default font */
+    background-size: cover; /* Ensure the background covers the entire page */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Prevent the background from repeating */
+    display: flex;
+    flex-direction: column; /* Align content vertically */
+    align-items: center; /* Center the content horizontally */
+}
+
+/* Container for the title, aligned at the top */
+.title-container {
+    text-align: center;
+    margin-bottom: 20px; /* Space below the title */
+    width: 100%; /* Ensure it spans the full width */
+}
+
+/* Main container for layout */
+.main-container {
+    display: flex;
+    justify-content: space-between; /* Space between the two columns */
+    width: 90%; /* Adjust width as needed */
+    max-width: 1200px; /* Limit the maximum width */
+}
+
+/* Left column for user input, diagnosis, and medications */
+.left-column {
+    width: 60%; /* Adjust the width as needed */
+    display: flex;
+    flex-direction: column; /* Stack the input and output vertically */
+    justify-content: space-between; /* Push the medication container to the bottom */
+    margin-right: 80px; /* Space between the left and right columns */
+}
+
+/* Right column for the diagram */
+.right-column {
+    width: 40%; /* Adjust the width as needed */
+}
+
+/* Align the "Select your symptoms" message to the left */
+.symptom-message {
+    text-align: left;
+    margin-bottom: 10px; /* Space below the message */
+}
+
+/* Container for the form (symptoms and button) */
+.form-container {
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap to the next line */
+    justify-content: center; /* Center items horizontally */
+    align-items: center; /* Center items vertically */
+    max-width: 600px; /* Optional: set max width for the form */
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8); /* White background with transparency */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    border-radius: 10px; /* Rounded corners */
+}
+
+/* Each symptom should have some space around it */
+.form-container label {
+    margin: 10px;
+    width: 150px; /* Optional: set a fixed width for each label */
+}
+
+/* Style the button */
+button {
+    padding: 10px 20px;
+    margin-top: 20px;
+    font-size: 16px;
+    color: white;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%; /* Button spans full width */
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Medications list styling */
+.medications-container {
+    margin-top: 20px;
+    text-align: center; /* Center text */
+    background-color: rgba(255, 255, 255, 0.9); /* White background with slight transparency */
+    padding: 15px;
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    width: 100%; /* Ensure it takes full width within the container */
+    align-self: flex-end; /* Push the container to the bottom of the left column */
+}
+
+.medications-container h3 {
+    color: #007bff;
+    margin-bottom: 10px;
+}
+
+.medications-container ul {
+    list-style-type: disc; /* Use disc bullets */
+    padding-left: 20px; /* Indent the list */
+    text-align: left; /* Align text to the left within the centered container */
+    display: inline-block; /* Align the list to center it within the container */
+}
+
+.medications-container li {
+    margin-bottom: 5px;
+    font-size: 16px;
+    color: #333;
+}
+
+/* Diagram container styling */
+.diagram-container {
+    background-color: rgba(255, 255, 255, 0.9); /* White background with slight transparency */
+    padding: 15px;
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    width: 180%; /* Ensure it takes full width within the container */
+    height: auto;
+}
